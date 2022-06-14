@@ -1,0 +1,30 @@
+1. Pattern 클래스
+Pattern 클래스의 matches() 메소드를 통해 문자열을 검증할 수 있습니다.
+matches의 첫번째 파라미터로 패턴 정규표현식을, 두번째 파라미터에는 검증을 하고자 하는 문자열을 넣으면 됩니다.
+
+** Pattern 클래스의 주요 메소드
+- complie(String regex) 주어진 정규표현식으로 패턴을 만드며, 컴파일이라고 합니다.
+- matcher(CharSequence input) 입력된 문자열에서 패턴을 찾는 Matcher 객체를 만듭니다.
+- pattern() 컴파일된 정규표현식을 String 형태로 반환합니다.
+- split(CharSequence input) 주어진 입력 캐릭터 시퀸스를 패턴에 따라 분리합니다.
+- matches(String regex, CharSequence input) 주어진 문자열이 규칙에 일치여부를 반환합니다.
+
+
+
+2. Matcher 클래스
+Matcher 객체는 대상 문자열이 주어진 패턴과 일치하는가를 판단하는데 사용됩니다.
+Matcher 클래스의 입력값으로는 CharSequence라는 새로운 인터페이스가 사용되는데
+이를 통해 다양한 형태의 입력 데이터로부터 문자 단위의 매칭 기능을 지원 받을 수 있습니다.
+
+** Matcher 클래스 주요 메서드
+- matches() 대상 되는 문자열이 패턴과 일치하는가를 판단합니다.
+- lookingAt() 대상이 되는 문자열이 패턴으로 시작하는가를 판단합니다.
+- find() 대상이 되는 문자열에서 패턴을 찾습니다.
+- find(int start) Start 위치 이후부터 매칭 검사를 합니다.
+- start() 매칭되는 문자열 시작 위치를 반환합니다.
+- start(int group) 지정된 그룹이 매칭되는 시작 위치를 반환합니다.
+- end() 매칭되는 문자열 끝 다음 문자 위치를 반환합니다.
+- end(int group) 지정된 그룹이 매칭되는 끝 다음 문자 위치를 반환합니다.
+- group() 매칭된 부분을 반환합니다.
+- group(int group) 매칭된 부부 중 group번 부분을 반환합니다.
+- replaceAll(String replacement) 패턴과 일치되는 부분을 replacement로 대체합니다.
