@@ -23,7 +23,16 @@ TCP
 TCP는 패킷을 어떻게 추적 및 관리하나요?
 : 위에서 데이터는 패킷단위로 나누어 같은 목적지(IP계층)으로 전송된다고 설명하였습니다. 예를 들어 한줄로 서야하는 A,B,C라는 사람(패킷)들이 서울(발신지)에서 출발하여 부산(수신지)으로 간다고 합시다. 그런데 A,B,C가 순차적으로 가는 상황에서 B가 길을 잘못 들어서 분실되었다고 합시다. 하지만 목적지에서는 A,B,C가 모두 필요한지 모르고 A,C만 보고 다 왔다고 착각할 수 있습니다. 그렇기 때문에 A,,B,C라는 패킷에 1,2,3이라는 번호를 부여하여 패킷의 분실 확인과 같은 처리를 하여 목적지에서 재조립을 합니다. 이런 방식으로 TCP는 패킷을 추적하며, 나누어 보내진 데이터를 받고 조립을 할 수 있습니다.
 
+3-way handshaking ?
+clinet -> server (SYN)
+server -> client (SYN ACK)
+client -> server (ACK)
 
+4-way handshaking ?
+client -> server (FIN)
+server -> client (ACK)
+server -> client (FIN)
+client -> server (ACK)
 
 UDP
 : 데이터를 데이터그램 단위로 처리하는 프로토콜
