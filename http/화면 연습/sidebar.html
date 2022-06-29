@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input[id="menu_icon"]{display: none;}
+
+    /* 헤더 */
+    header{width: 100%; background: #e5e5e5;}
+    header > div {position: relative; width: 1200px; margin: 0 auto;}
+    header > div ul.navi{font-size: 0;}
+    header > div ul.navi > li {font-size: 12px; display: inline-block; vertical-align: middle;}
+    header > div ul.navi > li > a{display: block; width: auto; padding: 20px;}
+    header > div ul.navi > li.logo > a{padding: 20px 50px; font-size: 20px; font-weight: 900;}
+
+    .area_desc{position: absolute; top: 50%; transform: translate(-50%, -50%); left: 50%; font-size: 20px;}
+
+    .menu_button{display: block; width: 50px; height: 50px; position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;}
+    .menu_button span{display: block; position: absolute; width: 80%; height: 5px; border-radius: 30px; background: #222; transition: all  .35s;}
+    .menu_button span:nth-child(1){top: 20%; left: 50%; transform: translateX(-50%);} 
+    .menu_button span:nth-child(2){top: 50%; left: 50%; transform: translate(-50%, -50%);} 
+    .menu_button span:nth-child(3){bottom: 20%; left: 50%; transform: translateX(-50%);}
+    
+    .container {width: 100%; position: relative;}
+    .container .contents {width: 1200px; margin: 0 auto; min-height: 700px; border: 1px solid #eee; background-color: #f1f1f1; }
+    .container .sidebar {position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background: #666; border: 1px solid #eee; z-index: 30; transition: .35s;}
+
+
+    input[id="menu_icon"]:checked ~ header .menu_button {z-index: 2;}
+    input[id="menu_icon"]:checked ~ header .menu_button span:nth-child(1) {top: 50%; transform: translateX(-50%); rotate: (-45deg);}
+    input[id="menu_icon"]:checked ~ header .menu_button span:nth-child(2) {left: 50%; transform: translate(-50%,-50%) scale(2);opacity: 0;}
+    input[id="menu_icon"]:checked ~ header .menu_button span:nth-child(3) {bottom: 50%; transform: translateX(50%); rotate: (45deg);}
+    input[id="menu_icon"]:checked ~ header .menu_button span{right: 300px;}
+    input[id="menu_icon"]:checked ~ .container .sidebar {right: 0;}
+</style>
+<body>
+    <input type="checkbox" id="menu_icon">
+    <header>
+        <div>
+            <ul class="navi">
+                <li class="logo"><a>상단로고 영역</a></li>
+                <li><a>메뉴01</a></li>
+                <li><a>메뉴02</a></li>
+                <li><a>메뉴03</a></li>
+                <li><a>메뉴04</a></li>
+                <li><a>메뉴05</a></li>
+            </ul>
+            <label for="menu_icon" class="menu_button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+    </header>
+    <div class="container"> 
+        <div class="contents">
+            <span class="area_desc">content 영역</span>
+        </div>
+        <div class="sidebar">
+            <span class="area_desc">sidebar 영역</span>
+        </div>
+    </div>
+</body>
+</html>
